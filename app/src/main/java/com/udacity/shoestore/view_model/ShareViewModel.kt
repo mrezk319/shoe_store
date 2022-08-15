@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.view_model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -12,7 +12,6 @@ class ShareViewModel : ViewModel() {
         Timber.i("ViewMOdel Created")
 
     }
-
     private var _shoesList = MutableLiveData<MutableList<Shoe>>(mutableListOf())
     val shoesList: LiveData<MutableList<Shoe>>
         get() = _shoesList
@@ -20,7 +19,7 @@ class ShareViewModel : ViewModel() {
 
     init {
         _shoesList.value!!.add(Shoe("Ligra 7 M",38.0,"adidas","Lace closure."))
-        _shoesList.value!!.add(Shoe("F18 - Sportive Lace-Up Running",45.0,"Desert","Comfortable Canvas upper material."))
+        _shoesList.value!!.add(Shoe("F18-Sportive Lace-Up Running",45.0,"Desert","Comfortable Canvas upper material."))
     }
 
 

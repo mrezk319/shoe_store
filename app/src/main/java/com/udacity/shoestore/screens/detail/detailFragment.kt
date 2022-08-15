@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.ShareViewModel
+import com.udacity.shoestore.view_model.ShareViewModel
 import com.udacity.shoestore.databinding.FragmentDetailBinding
 import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
@@ -28,6 +27,8 @@ class detailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDetailBinding.inflate(inflater)
+        (activity as AppCompatActivity).supportActionBar?.title = "Add New Shoe!"
+
         return binding.root
     }
 

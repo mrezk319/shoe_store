@@ -40,8 +40,8 @@
             app:destination="@id/shoeListFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/shoeListFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"
