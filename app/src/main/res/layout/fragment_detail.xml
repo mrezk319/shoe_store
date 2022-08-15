@@ -1,14 +1,18 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+    <data>
+        <variable
+            name="shareViewModel"
+            type="com.udacity.shoestore.view_model.ShareViewModel" />
+    </data>
+    <!-- constraintLayout is used here because the design is more complex ,
+constraint has better usage. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="@+id/Description"
         app:layout_constraintTop_toBottomOf="@+id/Description">
-
 
         <TextView
             android:id="@+id/textView2"
@@ -34,11 +38,11 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:text="@={shareViewModel.name}"
                 android:id="@+id/shoeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck" />
-
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,6 +59,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/company"
+                android:text="@={shareViewModel.company}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -75,6 +80,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/size"
+                android:text="@={shareViewModel.size}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck" />
@@ -95,6 +101,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/description"
+                android:text="@={shareViewModel.description}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck" />

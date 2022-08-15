@@ -33,6 +33,7 @@ class detailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.shareViewModel = viewModel
         super.onViewCreated(view, savedInstanceState)
         binding.Save.setOnClickListener {
             viewModel.shoesList.value?.add(
@@ -43,6 +44,7 @@ class detailFragment : Fragment() {
                     binding.description.text.toString()
                 )
             )
+            viewModel.cleanFields()
             findNavController().navigate(R.id.action_detailFragment_to_shoeListFragment)
             Timber.i(viewModel.shoesList.value.toString())
 

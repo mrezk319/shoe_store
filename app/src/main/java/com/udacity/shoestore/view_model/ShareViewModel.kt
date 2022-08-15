@@ -16,10 +16,27 @@ class ShareViewModel : ViewModel() {
     val shoesList: LiveData<MutableList<Shoe>>
         get() = _shoesList
 
+    var name: String = ""
+    var size: String = ""
+    var company: String = ""
+    var description: String = ""
+    fun cleanFields() {
+        name = ""
+        size = ""
+        company = ""
+        description = ""
+    }
 
     init {
-        _shoesList.value!!.add(Shoe("Ligra 7 M",38.0,"adidas","Lace closure."))
-        _shoesList.value!!.add(Shoe("F18-Sportive Lace-Up Running",45.0,"Desert","Comfortable Canvas upper material."))
+        _shoesList.value!!.add(Shoe("Ligra 7 M", 38.0, "adidas", "Lace closure."))
+        _shoesList.value!!.add(
+            Shoe(
+                "F18-Sportive Lace-Up Running",
+                45.0,
+                "Desert",
+                "Comfortable Canvas upper material."
+            )
+        )
     }
 
 
