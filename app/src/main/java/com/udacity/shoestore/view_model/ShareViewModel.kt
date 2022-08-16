@@ -12,6 +12,7 @@ class ShareViewModel : ViewModel() {
         Timber.i("ViewMOdel Created")
 
     }
+
     private var _shoesList = MutableLiveData<MutableList<Shoe>>(mutableListOf())
     val shoesList: LiveData<MutableList<Shoe>>
         get() = _shoesList
@@ -37,6 +38,10 @@ class ShareViewModel : ViewModel() {
                 "Comfortable Canvas upper material."
             )
         )
+    }
+
+    fun addShoeToList() {
+        _shoesList.value?.add(Shoe(name, size.toDouble(), company, description))
     }
 
 

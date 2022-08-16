@@ -36,14 +36,15 @@ class detailFragment : Fragment() {
         binding.shareViewModel = viewModel
         super.onViewCreated(view, savedInstanceState)
         binding.Save.setOnClickListener {
-            viewModel.shoesList.value?.add(
-                Shoe(
-                    binding.shoeName.text.toString(),
-                    binding.size.text.toString().toDouble(),
-                    binding.company.text.toString(),
-                    binding.description.text.toString()
-                )
-            )
+//            viewModel.shoesList.value?.add(
+//                Shoe(
+//                    binding.shoeName.text.toString(),
+//                    binding.size.text.toString().toDouble(),
+//                    binding.company.text.toString(),
+//                    binding.description.text.toString()
+//                )
+//            )
+            viewModel.addShoeToList()
             viewModel.cleanFields()
             findNavController().navigate(R.id.action_detailFragment_to_shoeListFragment)
             Timber.i(viewModel.shoesList.value.toString())
